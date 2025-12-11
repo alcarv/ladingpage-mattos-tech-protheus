@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mattos Tech Solutions | Protheus sem fricção</title>
+  <meta name="description"
+    content="Landing page Protheus da Mattos Tech Solutions. Implantação, suporte e evolução contínua do TOTVS Protheus com foco em resultado e atendimento consultivo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-2: #0b1428;
+      --card: rgba(15, 23, 42, 0.75);
+      --border: rgba(51, 65, 85, 0.6);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-2: #6366f1;
+      --accent: #22d3ee;
+      --success: #22c55e;
+      --shadow: rgba(15, 23, 42, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 25%),
+        linear-gradient(145deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.9);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    nav {
+      width: min(1180px, calc(100% - 32px));
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #bfdbfe;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .logo svg {
+      height: 32px;
+      width: 32px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .menu a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .menu a:hover {
+      color: #cbd5f5;
+    }
+
+    .link-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #bfdbfe;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 0;
+    }
+
+    .link-ghost:hover {
+      color: #fff;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: linear-gradient(120deg, var(--primary), var(--primary-2));
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+      filter: brightness(1.05);
+    }
+
+    .button-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .button-secondary:hover {
+      border-color: var(--primary);
+      color: #cbd5f5;
+    }
+
+    .hero {
+      position: relative;
+      width: min(1180px, calc(100% - 32px));
+      max-width: 1180px;
+      margin: 40px auto 0;
+      padding: 64px 20px 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: 24px;
+      border-radius: 24px;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.2), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.2), transparent 35%);
+      filter: blur(40px);
+      z-index: -2;
+    }
+
+    .hero-card {
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.85), rgba(18, 28, 50, 0.85));
+      box-shadow: 0 30px 80px var(--shadow);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.12);
+      color: #bfdbfe;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 44px);
+      margin: 0 0 16px;
+      line-height: 1.1;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .lead {
+      font-size: 18px;
+      color: #cbd5f5;
+      margin: 0 0 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.7);
+      color: #dbeafe;
+    }
+
+    .check svg {
+      color: var(--success);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.75);
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .metric {
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(59, 130, 246, 0.07);
+      color: #dbeafe;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    section {
+      width: min(1180px, calc(100% - 32px));
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      box-shadow: 0 20px 60px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(59, 130, 246, 0.08), transparent 55%);
+      pointer-events: none;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 10px;
+      color: #cbd5f5;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .list-item svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .step strong {
+      color: #fff;
+    }
+
+    .cta-card {
+      margin-top: 30px;
+      border-radius: 22px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(130deg, rgba(59, 130, 246, 0.16), rgba(15, 23, 42, 0.9));
+      box-shadow: 0 25px 70px rgba(59, 130, 246, 0.18);
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .form-status {
+      font-size: 13px;
+      margin-top: 8px;
+      color: var(--muted);
+      min-height: 18px;
+    }
+
+    .form-status.success {
+      color: #34d399;
+    }
+
+    .form-status.error {
+      color: #f87171;
+    }
+
+    .button[disabled] {
+      opacity: 0.65;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    footer {
+      width: min(1180px, calc(100% - 32px));
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .highlight {
+      color: #cbd5f5;
+      font-weight: 600;
+    }
+
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 22px;
+      right: 20px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.35),
+        0 0 0 0 rgba(37, 211, 102, 0.35);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      isolation: isolate;
+      animation: pulseGlow 2.4s ease-in-out infinite;
+    }
+
+    .whatsapp-fab::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.35) 0%, rgba(37, 211, 102, 0) 65%);
+      filter: blur(6px);
+      opacity: 0.9;
+      z-index: -1;
+      animation: halo 3s ease-in-out infinite;
+    }
+
+    .whatsapp-fab:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 20px 46px rgba(0, 0, 0, 0.4),
+        0 0 0 10px rgba(37, 211, 102, 0.22);
+      filter: brightness(1.05);
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.32);
+      }
+
+      50% {
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.24);
+      }
+
+      100% {
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.32);
+      }
+    }
+
+    @keyframes halo {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.6;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        margin-top: 10px;
+        padding: 40px 16px 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body { padding-bottom: 96px; }
+      nav { padding: 12px 14px; }
+      .hero { gap: 20px; overflow: hidden; }
+      .hero::before { margin: 0; }
+      .hero-card { padding: 20px; }
+      h1 { font-size: 28px; }
+      .lead { font-size: 16px; }
+      .checks { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      section { padding: 32px 16px; }
+      .cards { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .button, .button-secondary { width: 100%; justify-content: center; }
+      .whatsapp-fab { width: 58px; height: 58px; bottom: 16px; right: 16px; }
+    }
+
+    @media (max-width: 540px) {
+      nav { flex-direction: column; align-items: flex-start; gap: 8px; max-width: 100%; width: calc(100% - 28px); }
+      .logo { width: 100%; justify-content: flex-start; }
+      .menu { width: 100%; flex-direction: column; align-items: flex-start; gap: 6px; }
+      .menu a { font-size: 13px; }
+      .button { width: 100%; text-align: center; }
+      .hero { padding: 28px 14px 18px; }
+      .hero-card { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 24px; }
+      .lead, .muted, .check, .card p { font-size: 14px; }
+      .badge { flex-direction: column; align-items: flex-start; gap: 6px; }
+      section { padding: 26px 14px; }
+      .whatsapp-fab { width: 56px; height: 56px; bottom: 12px; right: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m18 16 4-4-4-4"></path>
+          <path d="m6 8-4 4 4 4"></path>
+          <path d="m14.5 4-5 16"></path>
+        </svg>
+        <span>Mattos Tech Solutions</span>
+      </a>
+      <div class="menu">
+        <a href="#dor">Dores</a>
+        <a href="#oferta">Oferta Protheus</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#contato">Contato</a>
+        <a class="button" href="https://wa.me/5511990183194?text=Quero%20otimizar%20meu%20Protheus">Falar no
+          WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <div class="pill">Especial Protheus · Mattos Tech Solutions</div>
+      <h1>Protheus sem fricção para times que precisam de <span>resultado agora</span>.</h1>
+      <p class="lead">Implantação, evolução e suporte do TOTVS Protheus com squads híbridos (São Paulo/Tatuapé + remoto)
+        e foco em performance operacional.</p>
+      <p class="muted">Reduza retrabalho, ganhe controle sobre fiscal, estoque, compras e finanças e mantenha o ERP
+        rodando com governança e SLA claro.</p>
+
+      <div class="checks">
+        <div class="check">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            <path d="m9 11 3 3L22 4" />
+          </svg>
+          Go-live rápido com riscos controlados
+        </div>
+        <div class="check">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            <path d="m9 11 3 3L22 4" />
+          </svg>
+          Ajustes sob medida sem perder suporte TOTVS
+        </div>
+        <div class="check">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            <path d="m9 11 3 3L22 4" />
+          </svg>
+          Monitoramento, atualizações e treinamento contínuo
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="button" href="#contato">Agendar diagnóstico gratuito</a>
+        <a class="button button-secondary"
+          href="https://wa.me/5511990183194?text=Quero%20otimizar%20meu%20Protheus">Conversar agora</a>
+      </div>
+
+      <a class="link-ghost" href="https://mattostechsolutions.com.br" target="_blank" rel="noopener noreferrer">
+        Conheça mais sobre nossos serviços completos
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+
+      <div class="badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v.01" />
+          <path d="M12 8v4" />
+        </svg>
+        SLA consultivo com especialistas em Protheus, cloud e integrações.
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric">
+          <strong>98%</strong>
+          SLA cumprido em tickets críticos.
+        </div>
+        <div class="metric">
+          <strong>40%</strong>
+          ganho médio de eficiência em fechamento.
+        </div>
+        <div class="metric">
+          <strong>10+ anos</strong>
+          em projetos ERP e nuvem.
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="pill">Radar Protheus</div>
+      <h3 style="margin: 0 0 10px; color: #fff;">Detecte riscos antes de virar problema</h3>
+      <p class="muted" style="margin-bottom: 16px;">Checklist rápido para avaliar saúde do seu Protheus. Preencha e
+        receba um plano de ação personalizado.</p>
+      <form id="radar-form">
+        <label>Nome completo
+          <input name="name" type="text" placeholder="Seu nome" required>
+        </label>
+        <label>E-mail corporativo
+          <input name="email" type="email" placeholder="voce@empresa.com.br" required>
+        </label>
+        <label>Telefone / WhatsApp
+          <input name="phone" type="tel" placeholder="+55 (11) 99999-9999" required>
+        </label>
+        <label>Prioridade atual
+          <select name="priority" required>
+            <option value="">Selecione</option>
+            <option>Implantação / Go-live</option>
+            <option>Performance e estabilidade</option>
+            <option>Fiscal e compliance</option>
+            <option>Integrações (API, e-commerce, BI)</option>
+            <option>Treinamento e governança</option>
+          </select>
+        </label>
+        <label>Contexto rápido
+          <textarea name="context"
+            placeholder="Onde dói hoje? O que precisa acontecer nas próximas 4 semanas?"></textarea>
+        </label>
+        <button type="submit" class="button" style="width: 100%;">Quero meu plano Protheus</button>
+        <div class="form-status" id="radar-status"></div>
+        <p class="muted" style="font-size: 12px; margin: 8px 0 0;">Retornamos em até 1h útil. Atendimento São Paulo
+          (Tatuapé) e remoto para todo o Brasil.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="dor">
+    <h2 class="section-title">Dores que resolvemos no Protheus</h2>
+    <p class="section-subtitle">Consultoria enxuta para empresas que não podem parar.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Fechamento travado</h3>
+        <p>Automação de conferências, ajustes fiscais e revisões de integrações para evitar atrasos no financeiro e
+          contábil.</p>
+      </div>
+      <div class="card">
+        <h3>Performance e estabilidade</h3>
+        <p>Revisão de ambiente, tunning de banco, auditoria de customizações e monitoramento proativo.</p>
+      </div>
+      <div class="card">
+        <h3>Fiscal e compliance</h3>
+        <p>Atualizações de pacotes, revisão de regras fiscais e rotinas para mitigar riscos de autuação.</p>
+      </div>
+      <div class="card">
+        <h3>Integração com operação</h3>
+        <p>APIs, EDI e conectores para e-commerce, BI e logística, mantendo suporte TOTVS e rastreabilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="grid-2">
+      <div>
+        <h2 class="section-title">Oferta Protheus da Mattos Tech</h2>
+        <p class="section-subtitle">Squad sênior + governança: mais velocidade, menos retrabalho.</p>
+        <div class="timeline">
+          <div class="step">
+            <div class="pill" style="margin:0; padding:8px 12px;">Semana 1</div>
+            <div>
+              <strong>Diagnóstico e estabilização</strong>
+              <div class="muted">Mapeamos riscos, priorizamos incidentes e definimos checklist mínimo para operação
+                rodar sem susto.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="pill" style="margin:0; padding:8px 12px;">Semanas 2-3</div>
+            <div>
+              <strong>Hardening e integrações</strong>
+              <div class="muted">Tuning de banco/infra, ajustes de rotinas, integrações críticas (fiscal, estoque,
+                vendas) e scripts de automação.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="pill" style="margin:0; padding:8px 12px;">Contínuo</div>
+            <div>
+              <strong>SLA e evolução</strong>
+              <div class="muted">Monitoramento, atualizações de release, treinamento de usuários-chave e backlog de
+                melhorias mensais.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-color: rgba(99,102,241,0.5);">
+        <h3 style="margin-top:0;">Por que Protheus com a Mattos Tech</h3>
+        <div class="list">
+          <div class="list-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 11 3 3L22 4" />
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            </svg>
+            Squad sênior: Protheus, nuvem e integrações (API/EDI/BI).
+          </div>
+          <div class="list-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 11 3 3L22 4" />
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            </svg>
+            Atuação híbrida: presencial Tatuapé/SP + remoto Brasil.
+          </div>
+          <div class="list-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 11 3 3L22 4" />
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            </svg>
+            Governança: backlog claro, priorização quinzenal e KPIs de SLA.
+          </div>
+          <div class="list-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 11 3 3L22 4" />
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+            </svg>
+            Segurança: boas práticas de versionamento, testes e rollback.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pacotes">
+    <h2 class="section-title">Pacotes rápidos para destravar seu Protheus</h2>
+    <p class="section-subtitle">Escolha o foco imediato. Podemos combinar módulos e criar um plano sob medida.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Kickoff Express (2 semanas)</h3>
+        <div class="list">
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Diagnóstico e mapa de riscos.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Estabilização de rotinas críticas.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Plano de ação com prioridades.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Performance e Infra</h3>
+        <div class="list">
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Tuning de banco e aplicações.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Monitoramento e alertas.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Revisão de segurança e backups.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Fiscal & Compliance</h3>
+        <div class="list">
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Atualização de pacotes e notas técnicas.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Auditoria de integrações fiscais.</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Roteiro de conformidade e treinamentos.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Integrações e BI</h3>
+        <div class="list">
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>APIs Protheus + conectores (e-commerce, CRM, WMS).</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Dados prontos para BI (Power BI / Looker).</div>
+          <div class="list-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>Automação de dados críticos (estoque, faturamento).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="cta-card">
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title" style="margin-bottom: 8px;">Vamos falar sobre seu Protheus?</h2>
+          <p class="section-subtitle">Atuação imediata em São Paulo (Tatuapé) e remoto em todo o Brasil.</p>
+          <div class="list">
+            <div class="list-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 11 3 3L22 4" />
+                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              </svg>
+              Retorno em até 1h útil.
+            </div>
+            <div class="list-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 11 3 3L22 4" />
+                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              </svg>
+              Diagnóstico e roadmap em 7 dias.
+            </div>
+            <div class="list-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 11 3 3L22 4" />
+                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              </svg>
+              Squad sênior dedicado com governança.
+            </div>
+          </div>
+        </div>
+        <div>
+          <form id="contact-form">
+            <label>Nome
+              <input name="name" type="text" placeholder="Seu nome" required>
+            </label>
+            <label>Empresa
+              <input name="company" type="text" placeholder="Nome da empresa" required>
+            </label>
+            <label>E-mail
+              <input name="email" type="email" placeholder="contato@empresa.com.br" required>
+            </label>
+            <label>Telefone / WhatsApp
+              <input name="phone" type="tel" placeholder="(11) 99999-9999" required>
+            </label>
+            <label>Mensagem
+              <textarea name="message" placeholder="Conte em poucas linhas onde precisamos atuar."></textarea>
+            </label>
+            <button class="button" type="submit">Quero falar com um especialista</button>
+            <a class="button button-secondary" style="margin-top:8px; width:100%; text-align:center;"
+              href="https://wa.me/5511990183194?text=Quero%20implantar%20ou%20otimizar%20meu%20Protheus">Chamar no
+              WhatsApp</a>
+            <div class="form-status" id="contact-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+      <div>© 2024 Mattos Tech Solutions. Protheus · Consultoria · Desenvolvimento.</div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span class="highlight">São Paulo - Tatuapé</span>
+        <span>|</span>
+        <a href="https://wa.me/5511990183194" class="highlight" style="text-decoration:none;">WhatsApp</a>
+        <span>|</span>
+        <a href="mailto:mattostechsolutions@gmail.com" class="highlight"
+          style="text-decoration:none;">mattostechsolutions@gmail.com</a>
+        <span>|</span>
+        <a href="https://mattostechsolutions.com.br" class="highlight" style="text-decoration:none;">Visite o nosso site</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://wa.me/5511990183194?text=Quero%20falar%20sobre%20meu%20Protheus"
+    aria-label="Falar no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <path
+        d="M16 3C9.373 3 4 8.373 4 15c0 2.092.504 4.051 1.396 5.808L4 29l8.37-1.353A11.9 11.9 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3Z" />
+      <path
+        d="M12.328 10.828c-.172-.386-.35-.394-.512-.401-.133-.006-.285-.006-.438-.006-.152 0-.4.057-.61.285-.21.228-.8.782-.8 1.907s.819 2.211.934 2.364c.114.152 1.588 2.418 3.91 3.294 1.9.75 2.285.601 2.697.563.412-.038 1.33-.542 1.52-1.066.19-.524.19-.972.133-1.066-.057-.095-.21-.152-.438-.266s-1.33-.653-1.536-.727c-.206-.076-.353-.115-.5.114-.146.228-.575.727-.704.876-.127.152-.259.171-.486.057-.228-.114-.96-.354-1.83-1.128-.676-.603-1.133-1.347-1.266-1.575-.133-.228-.014-.351.1-.465.104-.104.228-.266.342-.399.114-.133.152-.228.228-.38.076-.152.038-.285-.019-.399-.057-.114-.5-1.257-.69-1.717Z" />
+    </svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // Substitua pelos IDs reais do seu EmailJS
+    const EMAILJS_PUBLIC_KEY = 'SUA_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID = 'SEU_SERVICE_ID';
+    const EMAILJS_TEMPLATE_RADAR = 'TEMPLATE_RADAR_ID';
+    const EMAILJS_TEMPLATE_CONTACT = 'TEMPLATE_CONTACT_ID';
+
+    if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'SUA_PUBLIC_KEY') {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    function handleFormSubmit(formId, statusId, templateId) {
+      const form = document.getElementById(formId);
+      const statusEl = document.getElementById(statusId);
+      if (!form || !statusEl) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (EMAILJS_PUBLIC_KEY === 'SUA_PUBLIC_KEY') {
+          statusEl.textContent = 'Configure seu EmailJS (public key, service e templates).';
+          statusEl.className = 'form-status error';
+          return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+        }
+        statusEl.textContent = 'Enviando...';
+        statusEl.className = 'form-status';
+
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        try {
+          await emailjs.send(EMAILJS_SERVICE_ID, templateId, data);
+          statusEl.textContent = 'Recebemos sua mensagem. Responderemos em até 1h útil.';
+          statusEl.className = 'form-status success';
+          form.reset();
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = 'Não conseguimos enviar agora. Tente de novo ou chame no WhatsApp.';
+          statusEl.className = 'form-status error';
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = formId === 'radar-form' ? 'Quero meu plano Protheus' : 'Quero falar com um especialista';
+          }
+        }
+      });
+    }
+
+    handleFormSubmit('radar-form', 'radar-status', EMAILJS_TEMPLATE_RADAR);
+    handleFormSubmit('contact-form', 'contact-status', EMAILJS_TEMPLATE_CONTACT);
+  </script>
+</body>
+
+</html>
